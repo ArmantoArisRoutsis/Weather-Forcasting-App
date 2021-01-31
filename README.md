@@ -20,6 +20,6 @@
 - ##### Javascript
 - ##### ReactJS
 
-### To run the site on your local machine
+## To run the site on your local machine
 
 #### If you wish to run this locally you will to first need clone this repository to your local machine. Afterwards you will have to run npm install inside the project directory for all the necessary dependencies to be installed. After the installation of all the dependecies is compltetted will need to run the command npm start and a new window should open automatically on your browser displaying the client side of the app which runs on “http://localhost:3000/”.
