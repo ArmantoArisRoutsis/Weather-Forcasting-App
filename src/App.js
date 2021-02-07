@@ -1,4 +1,4 @@
-import React,{useState} from "react"
+import React,{useState,useEffect} from "react"
 
 import {getToday, getBackground, getWeekDay} from "./functions/functions"
 
@@ -12,7 +12,7 @@ const App = () => {
 
   const handleSearch = (e) =>{
     if(e.key === "Enter"){
-      fetch(`https://api.weatherbit.io/v2.0/forecast/daily?city=${query}&key=${API_KEY}`)
+      fetch(`https://api.weatherbit.io/v2.0/forecast/daily?city=${query}&key=2e2b7e5daf914807a9d49ad3b1e2c9dc`)
       .then(res=>res.json())
       .then(result =>{
         setWeather(result)
@@ -29,7 +29,7 @@ const App = () => {
         </div>
         {weather&&(<>
         <Today city={weather.city_name} date={getToday(new Date())} temp={Math.round(weather.data[0].temp)} description={weather.data[0].weather.description}/>
-        <h3 className="comming-days">Comming Days</h3>
+        <h3 className="comming-days">Coming Days</h3>
         <div className="weekly-weather-box">
           {[1,2,3,4,5,6].map(i=><WeekDay date={getWeekDay(new Date(),i)} temp={weather.data[i].temp} icon={weather.data[i].weather.icon} description={weather.data[i].weather.description}/>)}
         </div>
